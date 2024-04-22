@@ -15,11 +15,18 @@ public class Main {
         //Task 2
         System.out.println("\nTask 2");
         int[] weekPayOut = {7000, 2000, 4500, 5000, 3500};
-        int minWeekPayOut;
-        int maxWeekPayout;
-        Arrays.sort(weekPayOut);
-        minWeekPayOut = weekPayOut[0];
-        maxWeekPayout = weekPayOut[weekPayOut.length - 1];
+        int minWeekPayOut = 999_999_999;
+        int maxWeekPayout = -1;
+        for (int el : weekPayOut) {
+            if (el > maxWeekPayout) {
+                maxWeekPayout = el;
+            } else if (el < minWeekPayOut) {
+                minWeekPayOut = el;
+            }
+        }
+        //Arrays.sort(weekPayOut);
+        //minWeekPayOut = weekPayOut[0];
+        //maxWeekPayout = weekPayOut[weekPayOut.length - 1];
         System.out.printf("Минимальная сумма трат за неделю составила %d рублей. Максимальная сумма трат за неделю составила %d рублей.\n", minWeekPayOut, maxWeekPayout);
 
         //Task 3
